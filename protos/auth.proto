@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package auth;
+
+service ContatosService {
+  rpc AuthService (ServerRequest) returns (ServerReponse) {}
+}
+message ServerReponse {
+  string message = 1;
+}
+message ServerRequest {
+  string authorization = 1;
+  string requestId = 2;
+  string refreshToken = 3;
+  string contentType = 4;
+}
